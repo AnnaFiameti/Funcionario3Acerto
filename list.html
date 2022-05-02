@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../bootstrap-5.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../fontawesome-5.15.3/css/all.css">
+  <link rel="stylesheet" href="../css/estilo.css">
+  <title>Gerencia de Projetos</title>
+</head>
+<body>
+ 
+  <header>
+    <h2> Gerencia de Projetos</h2>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">NewProjects</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Projetos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/funcionario/list">Funcionario</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/sobre">Sobre</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class = "container table-responsive">
+    <table class="table table-hover">
+      <thead class="table-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Cpf</th>
+        <th scope="col">Email</th>
+        <th scope="col">Telefone </th>
+        <th scope="col">Editar</th>
+        <th scope="col">Deletar</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tbody>
+          <tr th:each="funcionario:${funcionarios}">
+            <th scope="row" th:text="${funcionario.id}"></th>
+            <td th:text="${funcionario.nome}"></td>
+            <td th:text="${funcionario.cpf}"></td>
+            <td th:text="${funcionario.telefone}"></td>
+            <td th:text="${funcionario.email}"></td>
+            <td scope="col"><a class="a-edit" href="./edit/1"><i class="fa fa-edit"></i></a></td>
+            <td scope="col"><a class="a-delete" href="./delete/1"><i class="fa fa-trash"></i></a></td>
+          </tr>
+
+        </tbody>
+    </table>
+  </div>
+    
+  <footer>
+      <h4> Localização: </h4>
+      <ul>
+        <li> Senai CTAI</li>
+        <li> Rodovia, SC-401, 3740 - Saco Grande, Flotianópolis - SC, 88032-005</li>
+        <li> (48) 3239-5800</li>
+
+      </ul>
+    </div>
+      <h4> Contatos </h4>
+      <ul>
+        <li> turma3a@gmail.com</li>
+        <li>(48) 3239-5800</li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src = "../js/popper.min.js"> </script>
+  <script src="../bootstrap-5.0.0/js/bootstrap.min.js"></script>
+  
+
+
+  <footer> </footer>
+
+</body>
+</html>
